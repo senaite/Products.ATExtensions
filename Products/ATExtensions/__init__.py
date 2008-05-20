@@ -28,6 +28,7 @@ sys.modules['Products.ATExtensions.at_extensions'] = ateapi
 registerDirectory(SKINS_DIR, GLOBALS)
 
 def initialize(context):
+    """Initializer called when used as a Zope 2 product."""
     content_types, constructors, ftis = process_types(
         listTypes(PROJECTNAME),
         PROJECTNAME)
@@ -38,3 +39,4 @@ def initialize(context):
         extra_constructors = constructors,
         fti                = ftis,
         ).initialize(context)
+
