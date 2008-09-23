@@ -6,7 +6,7 @@ from email import EmailField
 from record import RecordField
 from records import RecordsField
 from record_examples import SimpleNameField, LocationField,\
-     AddressField, ContactField, NetAddressField
+     AddressField, ContactField, NetAddressField, LabeledUrlField
 from records_examples import MultipleNamesField, PhoneNumbersField
 from formattablename import FormattableNameField
 from formattablenames import FormattableNamesField

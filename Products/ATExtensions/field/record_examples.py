@@ -3,6 +3,7 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.Registry import registerField
 
 from Products.ATExtensions.Extensions.utils import getDisplayList
+from Products.ATExtensions.widget import LabeledUrlWidget
 
 from record import RecordField
 
@@ -89,6 +90,21 @@ class NetAddressField(RecordField):
 
 InitializeClass(NetAddressField)
 
+class LabeledUrlField(RecordField):
+    """field for holding a link to be displayed using a label"""
+    _properties = RecordField._properties.copy()
+    _properties.update({
+        'type' : 'labeled_url',
+        'subfields' : ('label','url'),
+        'subfield_validators':{'url':'isURL'},
+        'outerJoin':': ',
+        'widget' : LabeledUrlWidget,
+        })
+    security = ClassSecurityInfo()
+
+InitializeClass(LabeledUrlField)
+
+
 registerField(SimpleNameField,
               title="SimpleName",
               description="Used for storing a structured (first, last) name",
@@ -112,4 +128,9 @@ registerField(ContactField,
 registerField(NetAddressField,
               title="NetAddress",
               description="Used for storing email and homepage",
+              )
+
+registerField(LabeledUrlField,
+              title="labeledUrl",
+              description="Used for storing a label and a URL",
               )

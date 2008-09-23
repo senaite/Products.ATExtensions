@@ -12,3 +12,4 @@ from formattablenames import FormattableNamesWidget
 from comment import CommentWidget
 from remotetext import RemoteTextWidget
 from smartemail import SmartEmailWidget
+from labeledurl import LabeledUrlWidget
