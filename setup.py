@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.9.3'
+version = '0.9.4'
 
 setup(name='Products.ATExtensions',
       version=version,
@@ -18,7 +18,7 @@ setup(name='Products.ATExtensions',
       author='Raphael Ritz',
       author_email='r.ritz@biologie.hu-berlin.de',
       url='http://svn.plone.org/svn/archetypes/Products.ATExtensions',
-      license='GPL',
+      license='BSD',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products'],
       include_package_data=True,
