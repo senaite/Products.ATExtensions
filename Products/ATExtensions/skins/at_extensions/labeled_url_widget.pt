@@ -11,15 +11,20 @@
             tal:define="kssClassesView context/@@kss_field_decorator_view;
                         getKssClasses nocall:kssClassesView/getKssClassesInlineEditable;">
         <span metal:define-macro="labeled-url-field-view"
-            tal:define="kss_class python:getKssClasses(fieldName,
-                            templateId='labeled_url_widget', macro='labeled-url-field-view');
-                        data accessor"
+            tal:define="kss_class python:getKssClasses(fieldName,templateId='labeled_url_widget', macro='labeled-url-field-view');
+                        data accessor;
+			url data/url|nothing;
+			label data/label|nothing"
             tal:attributes="class kss_class;
                             id string:parent-fieldname-$fieldName;">
-            <a metal:define-slot="inside"
+            <span metal:define-slot="inside">
+	      <a tal:condition="url"
                  href=""
-	         tal:attributes="href data/url"
-                 tal:content="data/label">#</a>
+	         tal:attributes="href url"
+                 tal:content="label">#</a>
+	      <span tal:condition="not:url"
+		    tal:content="label" />
+	    </span>
         </span>
     </metal:view_macro>
 

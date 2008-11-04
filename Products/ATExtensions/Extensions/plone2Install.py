@@ -27,8 +27,8 @@ def setupProperties(self, out):
     if not psheet:
         ptool.addPropertySheet('extensions_properties',
                                'Properties of the ATExtension product')
-        ps = getattr(ptool, 'extensions_properties')
 
+        ps = getattr(ptool, 'extensions_properties')
         ps._properties = ps._properties + (
             {'id':'phone_number_types', 'type':'lines', 'mode':'wd'},
             {'id':'country_names', 'type':'lines', 'mode':'wd'},
