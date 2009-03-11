@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.9.6 (unreleased)
+------------------
+
+* Added Spanish translation. Thanks to Franco Pellegrini for the 
+contribution. [raphael]
+
+
 0.9.5 (2008/11/04)
 ------------------
 
