@@ -20,5 +20,15 @@ def importVarious(context):
                       'more',
                       'traverse_to',
                       'string:more_edit')
+    pfc.addFormValidators('atct_edit',
+                          '',   # context_type
+                          'more',
+                          '')   # validators
+    pfc.addFormAction('atct_edit',
+                      'success',
+                      '',    # context_type
+                      'more',
+                      'traverse_to',
+                      'string:more_edit')
     return "Added validator and action for the 'more' button to " \
            "the form controller."

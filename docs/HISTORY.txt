@@ -4,6 +4,9 @@ Changelog
 0.9.6 (unreleased)
 ------------------
 
+* Added form controller settings for the more button when used
+from atct_edit. [raphael]
+
 * Added Spanish translation. Thanks to Franco Pellegrini for the 
 contribution. [raphael]
 
