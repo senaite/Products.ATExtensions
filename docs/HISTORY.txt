@@ -4,6 +4,9 @@ Changelog
 0.9.6 (unreleased)
 ------------------
 
+* Respect a 'show_hm' attribute on record(s) widgets to optionally
+suppress the time component on datetime subfields. [raphael]
+
 * Added form controller settings for the more button when used
 from atct_edit. [raphael]
 

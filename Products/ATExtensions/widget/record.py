@@ -7,6 +7,7 @@ class RecordWidget(StringWidget):
     _properties = StringWidget._properties.copy()
     _properties.update({
         'macro' : "record_widget",
+        'show_hm' : True,             # only meaningful for DateTime subfields
         })
     security = ClassSecurityInfo()
 

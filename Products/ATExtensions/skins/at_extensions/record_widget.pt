@@ -98,6 +98,7 @@
 	<tal:date condition="python:type == 'datetime'">
 	<div tal:define="id string:${fieldName}_${key};
                value python:values.get(key);
+	       show_hm    widget/show_hm;
 	       inputname  string:${fieldName}.${key}:record;
 	       formname   string:edit_form;
 	       inputvalue python: test(value, value, '');
