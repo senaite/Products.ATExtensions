@@ -40,7 +40,7 @@
 			   tabindex="#"
 			   tal:attributes="name string:${fieldName}_source_path;
 			   value spath;
-			   tabindex tabindex/next;"
+			   tabindex tabindex/next|nothing;"
 			   />
                 <br /> <br />
 		<span class="label">Source type:</span>
@@ -49,7 +49,7 @@
                         <input class="noborder"
                                tabindex=""
                                type="radio"
-                               tal:define="tabindex tabindex/next"
+                               tal:define="tabindex tabindex/next|nothing"
                                tal:attributes="name string:${fieldName}_source_type;
                                                id string:${fieldName}_source_type_${tabindex};
                                                checked python:here.checkSelected(item, stype);
@@ -66,7 +66,7 @@
               tal:attributes="value string:${fieldName}" />
        <input type="submit" name="form.button.customize" class="context"
        tal:attributes="value python:' Customize ';
-                       tabindex tabindex/next" />
+                       tabindex tabindex/next|nothing" />
 
             </metal:fill>
         </metal:use>
@@ -80,7 +80,7 @@
                    name="form.button.uncustomize" 
                    class="context"
                    tal:attributes="value python:' Undo Customization ';
-                       tabindex tabindex/next" />
+                       tabindex tabindex/next|nothing" />
         </div>
     </div>
 

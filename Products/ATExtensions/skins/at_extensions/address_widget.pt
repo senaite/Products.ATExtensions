@@ -35,36 +35,36 @@
 	    <div class="field"> 
 	      <input name="address.street1:record:ignore_empty"
 		tal:attributes="value street1;
-                                tabindex tabindex/next" />
+                                tabindex tabindex/next|nothing" />
 	    </div>
 	    <div class="label">Street (cont)</div>
 	    <div class="field">	
 	      <input name="address.street2:record:ignore_empty"
 		tal:attributes="value street2;
-                                tabindex tabindex/next" />
+                                tabindex tabindex/next|nothing" />
 	    </div>
 	    <div class="label">ZIP Code</div>
             <div class="field">
 	      <input name="address.zip:record:ignore_empty"
 		tal:attributes="value zip;
-                                tabindex tabindex/next" />
+                                tabindex tabindex/next|nothing" />
 	    </div>
 	    <div class="label">City</div>
             <div class="field">
 	      <input name="address.city:record:ignore_empty"
 		tal:attributes="value city;
-                                tabindex tabindex/next" />
+                                tabindex tabindex/next|nothing" />
 	    </div>
 	    <div class="label">State</div>
             <div class="field">
 	      <input name="address.state:record:ignore_empty"
 		tal:attributes="value state;
-                                tabindex tabindex/next" /> <br />
+                                tabindex tabindex/next|nothing" /> <br />
 	    </div>
 	    <div class="label">Country</div>
             <div class="field">
             <select name="address.country:record:ignore_empty" size="1"
-                       tal:attributes="tabindex tabindex/next" 
+                       tal:attributes="tabindex tabindex/next|nothing" 
 		       tal:define="values python:here.portal_properties.nip_properties.getProperty('country_names')">
                 <option tal:repeat="value values"
                         tal:content="value"

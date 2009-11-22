@@ -42,7 +42,7 @@
                         <input class="noborder"
                                tabindex=""
                                type="radio"
-                               tal:define="tabindex tabindex/next"
+                               tal:define="tabindex tabindex/next|nothing"
                                tal:attributes="name fieldName;
                                                id string:${fieldName}_${tabindex};
                                                checked python:here.checkSelected(item, value);
@@ -62,7 +62,7 @@
                     <input class="noborder"
                            tabindex=""
                            type="radio"
-                           tal:define="tabindex tabindex/next"
+                           tal:define="tabindex tabindex/next|nothing"
                            tal:condition="addother"
                            tal:attributes="name fieldName;
                                            id string:${fieldName}_${tabindex};
@@ -84,7 +84,7 @@
 
                     <select tal:attributes="name fieldName;
                                             id fieldName;
-                                            tabindex tabindex/next;">
+                                            tabindex tabindex/next|nothing;">
 
                         <option tal:repeat="item vocab"
                                 tal:attributes="value item;
@@ -119,7 +119,7 @@
                            tabindex="#"
                            tal:attributes="name string:${fieldName}_other;
                            value python:value*checkother;
-                           tabindex tabindex/next;"
+                           tabindex tabindex/next|nothing;"
                            />
                 </span>
 

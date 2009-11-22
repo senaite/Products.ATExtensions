@@ -35,7 +35,7 @@
                value value;
                size widget/size;
                maxlength widget/maxlength;
-               tabindex tabindex/next;"
+               tabindex tabindex/next|nothing;"
                />
       </metal:use>
     </metal:define>

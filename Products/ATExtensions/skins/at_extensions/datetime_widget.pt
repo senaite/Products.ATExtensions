@@ -41,7 +41,7 @@
                             inputname fieldName;
                             formname string:search_form;
                             inputvalue python:min(request.form.get(fieldName, None) or request.other.get(fieldName, None) or ('1975-05-26',)).strip();
-                            tabindex tabindex/next">
+                            tabindex tabindex/next|nothing">
             <metal:box use-macro="here/datetime_widget/macros/calendarDatePickerBoxNG">
               a calendar, hopefully
             </metal:box>
@@ -51,7 +51,7 @@
                           inputname fieldName;
                           formname string:search_form;
                           inputvalue python:max(request.form.get(fieldName, None) or request.other.get(fieldName, None) or ('2975-05-26',)).strip();
-                          tabindex tabindex/next">
+                          tabindex tabindex/next|nothing">
             <metal:box use-macro="here/datetime_widget/macros/calendarDatePickerBoxNG">
               a calendar, hopefully
             </metal:box>
@@ -110,7 +110,7 @@
 	<select name="ic_month"
 		id="ic_month"
 		size="1"
-		tal:attributes="tabindex tabindex;
+		tal:attributes="tabindex tabindex|nothing;
 		name string:${inputname}_month;
 		id string:${input_id}_month;
 		onfocus onfocus|nothing;
@@ -140,7 +140,7 @@
 	<select name="ic_day"
 		id="ic_day"
 		size="1"
-		tal:attributes="tabindex tabindex;
+		tal:attributes="tabindex tabindex|nothing;
 		name string:${inputname}_day;
 		id string:${input_id}_day;
 		onfocus onfocus|nothing;
@@ -169,7 +169,7 @@
 	<select name="ic_hour"
 		id="ic_hour"
 		size="1"
-		tal:attributes="tabindex tabindex;
+		tal:attributes="tabindex tabindex|nothing;
 		name string:${inputname}_hour;
 		id string:${input_id}_hour;
 		onfocus onfocus|nothing;
@@ -197,7 +197,7 @@
 	<select name="ic_minute"
 		id="ic_minute"
 		size="1"
-		tal:attributes="tabindex tabindex;
+		tal:attributes="tabindex tabindex|nothing;
 		name string:${inputname}_minute;
 		id string:${input_id}_minute;
 		onfocus onfocus|nothing;
