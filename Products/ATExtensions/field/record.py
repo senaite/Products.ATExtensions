@@ -264,9 +264,9 @@ class RecordField(ObjectField):
 
             if type(current_validators) is DictType:
                 raise NotImplementedError, 'Please use the new syntax with validation chains'
-            elif IValidationChain.isImplementedBy(current_validators):
+            elif IValidationChain.providedBy(current_validators):
                 validators = current_validators
-            elif IValidator.isImplementedBy(current_validators):
+            elif IValidator.providedBy(current_validators):
                 validators = ValidationChain(chainname, validators=current_validators)
             elif type(current_validators) in (TupleType, ListType, StringType):
                 if len(current_validators):
