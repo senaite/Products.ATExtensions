@@ -51,14 +51,14 @@
                                type="radio"
                                tal:define="tabindex tabindex/next|nothing"
                                tal:attributes="name string:${fieldName}_source_type;
-                                               id string:${fieldName}_source_type_${tabindex};
+                                               id string:${fieldName}_source_type_${repeat/item/number};
                                                checked python:here.checkSelected(item, stype);
                                                value item;
                                                tabindex tabindex;"
                                />
 
-                        <label tal:content="python:here.translate(vocab.getValue(item), default=vocab.getValue(item))"
-                               tal:attributes="for string:${fieldName}_source_type_${tabindex/pos}" />
+                        <label tal:content="python:vocab.getValue(item)"
+                               tal:attributes="for string:${fieldName}_source_type_${repeat/item/number}" />
 
                     </tal:radios>
                 <br /> <br />
