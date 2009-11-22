@@ -97,7 +97,7 @@
 
                         <option tal:attributes="value python: 'other';
                                                 selected python:checkother*'selected';"
-                                tal:content="python:here.translate(other, other)"
+                                tal:content="widget/other"
                                 i18n:translate=""
                                 tal:condition="addother"
                                 />
