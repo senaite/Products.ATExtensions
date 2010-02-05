@@ -1,7 +1,14 @@
 Changelog
 =========
 
-0.9.6 (unreleased)
+0.9.7 (unreleased)
+------------------
+
+* Made some field/widget methods of the record widget available to 
+untrusted code. [raphael]
+
+
+0.9.6 (2009/07/10)
 ------------------
 
 * Respect a 'show_hm' attribute on record(s) widgets to optionally

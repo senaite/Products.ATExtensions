@@ -50,17 +50,20 @@ class RecordField(ObjectField):
 
     security = ClassSecurityInfo()
     
+    security.declarePublic('getSubfields') 
     def getSubfields(self):
         """the tuple of sub-fields"""
         return self.subfields
 
+    security.declarePublic('getSubfieldType') 
     def getSubfieldType(self, subfield):
         """
         optional type declaration
         default: string
         """
         return self.subfield_types.get(subfield, 'string')
-    
+
+    security.declarePublic('getSubfieldLabel') 
     def getSubfieldLabel(self, subfield):
         """
         optional custom label for the subfield
@@ -94,6 +97,7 @@ class RecordField(ObjectField):
         
         return self.subfield_vocabularies.has_key(subfield)
 
+    security.declarePublic('testSubfieldCondition') 
     def testSubfieldCondition(self, subfield, folder, portal, object):
         """Test the subfield condition."""
         try:
