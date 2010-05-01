@@ -1,4 +1,4 @@
-from Globals import InitializeClass
+from App.class_init import InitializeClass
 from Products.Archetypes.Registry import registerField
 from Products.ATExtensions.Extensions.utils import getDisplayList
 from Products.Archetypes.Field import StringField

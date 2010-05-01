@@ -1,4 +1,4 @@
-from Globals import InitializeClass
+from App.class_init import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.PythonScripts.standard import html_quote
 from Products.Archetypes.Registry import registerField, registerPropertyType

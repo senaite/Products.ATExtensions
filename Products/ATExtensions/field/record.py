@@ -1,7 +1,7 @@
 from types import ListType, TupleType, ClassType, FileType, DictType, IntType
 from types import StringType, UnicodeType, StringTypes
 
-from Globals import InitializeClass
+from App.class_init import InitializeClass
 from DateTime import DateTime
 from AccessControl import ClassSecurityInfo
 from Products.PythonScripts.standard import html_quote

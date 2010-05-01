@@ -9,7 +9,7 @@
 #                                                #
 ##################################################
 
-from Globals import InitializeClass
+from App.class_init import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.Archetypes.public import CalendarWidget
 from Products.Archetypes.Registry import registerWidget
