@@ -46,7 +46,7 @@
                         size="30"
                         value=""
                         tabindex=""
-                        tal:attributes="tabindex tabindex/next;
+                        tal:attributes="tabindex tabindex/next|nothing;
                                         value request/email_from_address|nothing"/>
             </div>
             <div class="field"
@@ -68,7 +68,7 @@
                         size="30" 
                         value="" 
                         tabindex="" 
-                        tal:attributes="tabindex tabindex/next; value request/sender_fullname|nothing"
+                        tal:attributes="tabindex tabindex/next|nothing; value request/sender_fullname|nothing"
                         />
             </div>
             <div class="field"
@@ -96,7 +96,7 @@
                         size="30"
                         value=""
                         tabindex=""
-                        tal:attributes="tabindex tabindex/next;
+                        tal:attributes="tabindex tabindex/next|nothing;
                                         value request/subject | nothing" />
             </div>
             <div class="field"
@@ -123,7 +123,7 @@
                            id="body"
                            name="body"
                            tal:content="request/body | nothing"
-                           tal:attributes="tabindex tabindex/next;"/>
+                           tal:attributes="tabindex tabindex/next|nothing;"/>
             </div>
             <div class="formControls">
                 <input class="context"
@@ -132,7 +132,7 @@
                        name="form.button.Send"
                        value="Send"
                        i18n:attributes="value label_send;"
-                       tal:attributes="tabindex tabindex/next;" />
+                       tal:attributes="tabindex tabindex/next|nothing;" />
             </div>
         </fieldset>
         <input name="uid"

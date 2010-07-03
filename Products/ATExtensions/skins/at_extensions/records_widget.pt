@@ -63,7 +63,7 @@
 	       value python:field.getSubfieldValue(values, idx, key);
 	       size python:field.getSubfieldSize(key);
 	       maxlength python:field.getSubfieldMaxlength(key); 
-	       tabindex tabindex/next;"
+	       tabindex tabindex/next|nothing;"
 	       />
 	</tal:string>
 	<tal:selection condition="python: field.isSelection(key)">
@@ -71,7 +71,7 @@
                                vocab python:field.getVocabularyFor(key, here)">
 	   <select tal:attributes="name string:${fieldName}.${key}:records:ignore_empty; 
                                    id fieldName;
-		                   tabindex tabindex/next;"
+		                   tabindex tabindex/next|nothing;"
                    i18n:domain="python:i18n_domain">
 	      <option tal:repeat="item vocab"
 		      tal:attributes="value item;
@@ -88,7 +88,7 @@
 		  rows="5"
 		  tabindex="#"
 		  tal:attributes="name string:${fieldName}.${key}:records:ignore_empty:lines;
-        	                  tabindex tabindex/next;"
+        	                  tabindex tabindex/next|nothing;"
 		  tal:content="python:'\n'.join(field.getSubfieldValue(values, idx, key, []))" >
 	</textarea>
 	</tal:text>
@@ -99,7 +99,7 @@
 	       inputname  string:${fieldName}.${key}:ignore_empty:records;
 	       formname   string:edit_form;
 	       inputvalue python: test(value, value, '');
-	       tabindex tabindex/next;"
+	       tabindex tabindex/next|nothing;"
 	       tal:omit-tag="">
 	    <div metal:use-macro="here/calendar_macros/macros/calendarDatePickerBox|here/calendar_slot/macros/calendarDatePickerBox">
 	      a pop-up calendar
@@ -116,7 +116,7 @@
 	       value python:field.getSubfieldValue(values, idx, key);
 	       size python:field.getSubfieldSize(key);
 	       maxlength python:field.getSubfieldMaxlength(key); 
-	       tabindex tabindex/next;"
+	       tabindex tabindex/next|nothing;"
 	       />
 	</tal:number>
 	</tal:block>
@@ -127,7 +127,7 @@
                    type="checkbox"
                    value="off"
                    tabindex=""
-                   tal:attributes="tabindex tabindex/next;
+                   tal:attributes="tabindex tabindex/next|nothing;
                        name string:${fieldName}_delete_${idx};
                        id string:${fieldName}_checkbox_${idx};"
 		     />
@@ -136,14 +136,14 @@
        </table>
        <input type="submit" name="form.button.more" class="context"
        tal:condition="python: field.showMore(values)"
-       tal:attributes="tabindex tabindex/next" 
+       tal:attributes="tabindex tabindex/next|nothing" 
        i18n:attributes="value more_entries" />
           <div tal:condition="values">
             <input class="noborder"
                    type="checkbox"
                    value="off"
                    tabindex=""
-                   tal:attributes="tabindex tabindex/next;
+                   tal:attributes="tabindex tabindex/next|nothing;
                        name string:${fieldName}_delete;
                        id string:${fieldName}_checkbox;"
 		     />

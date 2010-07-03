@@ -9,13 +9,14 @@
     <!-- Smartemail Widget -->
     <metal:view_macro define-macro="view"
                       tal:define="email accessor;
+                                  isAnon context/portal_membership/isAnonymousUser;
                                   mask nocall:widget/EmailMask;
                                   field_id field/getName;
-                                  link python:widget.linkToMailForm(field=field_id,instance=here)">
+                                  link python:widget.linkToMailForm(field=field_id,instance=context)">
     <div tal:condition="isAnon">     
       <a href="#"
          tal:attributes="href link"
-         tal:content="python: mask(here,email)">
+         tal:content="python: mask(context,email)">
        masked value
       </a>
      </div>

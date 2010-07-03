@@ -1,10 +1,14 @@
 import re
-from Products.validation.interfaces import ivalidator
+from zope.interface import implements
+from Products.validation.interfaces.IValidator import IValidator
 
 class PartialUrlValidator:
-    __implements__ = (ivalidator,)
-    def __init__(self, name):
+    implements(IValidator)
+    def __init__(self, name, title='', description=''):
         self.name = name
+        self.title = title or name
+        self.description = description
+
     def __call__(self, value, *args, **kwargs):
         # field gets passed in via kwargs
         if '://' not in value:
