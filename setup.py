@@ -4,7 +4,7 @@ version = '1.1a1'
 
 setup(name='Products.ATExtensions',
       version=version,
-      description="This package provides some further fields and widgets for archetypes.",
+      description="This package provides some further fields and widgets for Archetypes.",
       long_description=open("README.txt").read() + "\n" +
                        open("CHANGES.txt").read(),
       classifiers=[
