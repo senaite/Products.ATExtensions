@@ -43,7 +43,7 @@ class FormattableNames:
         empty_marker = kw.get('empty_marker', "No names specified")
         sep = kw.get('sep', ', ')
         lastsep = kw.get('lastsep', ', and ')
-        
+
         if length == 0:
             return empty_marker
         if length == 1:

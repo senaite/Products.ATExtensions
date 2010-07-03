@@ -73,7 +73,7 @@ schema = BaseSchema + Schema((
                'jscalendar/calendar-en.js'),
     helper_css=('jscalendar/calendar-system.css',),
             )
-                 
+
                 ),
     TextField('short_description',
               widget=TextAreaWidget(label='Description',
@@ -109,7 +109,7 @@ class WorkingGroup(BaseContent):
     content_icon = "group.gif"
     schema = schema
     _at_rename_after_creation = True
-    
+
     # enable field sharing between 'short_description' and 'description'
 
     def getShortDescription(self, **kw):
@@ -133,7 +133,7 @@ class WorkingGroup(BaseContent):
     def LastName(self):
         """PI's last name; needed by the catalog for sorting"""
         return self.getPrincipal_investigator().get('last_name','')
-    
+
 
     def PI(self):
         """
@@ -143,7 +143,7 @@ class WorkingGroup(BaseContent):
                   + ' ' + \
                   self.getPrincipal_investigator().get('last_name','')
         return pi_name.strip()
-    
+
     def City(self):
         """ subfield of street address """
         return self.getStreet_address().get('city','')
@@ -157,8 +157,8 @@ class WorkingGroup(BaseContent):
     def DemoVocab(self):
         """just to have some display list"""
         return getDisplayList(self, 'phone_number_types')
-    
-    
+
+
 def modify_fti(fti):
     fti['allow_discussion'] = 1
     fti['global_allow'] = 0

@@ -16,7 +16,7 @@ def getValues(self, prop_name):
         return ptool.extensions_properties.getProperty(prop_name, None)
     else:
         return None
-    
+
 def makeDisplayList(values=None,add_select=True):
     if values and type(values) not in [type([]), type(())]:
         values = (values,)

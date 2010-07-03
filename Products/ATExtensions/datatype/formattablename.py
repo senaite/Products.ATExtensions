@@ -28,7 +28,7 @@ default_abbreviations = {}
 def abbreviate(value, abbr=None, join_abbr=''):
     """
     return an abbreviation for 'value'
-    
+
     1. from the abbreviations mapping
     2. or the first letter (or letters if value is multivalued)
     3. return '' if value is empty
@@ -41,7 +41,7 @@ def abbreviate(value, abbr=None, join_abbr=''):
         return special
     values = [v[0] for v in value.split()]
     return join_abbr.join(values)
-    
+
 
 class FormattableName:
 
@@ -101,7 +101,7 @@ class FormattableName:
         """Takes a format string to control the rendering
         of the name (inspired by DateTime).
 
-        Default format is '%T %F %M %P %L %S' where the 
+        Default format is '%T %F %M %P %L %S' where the
         keys mapped to by the default formatter are:
 
            %T -> title: for a leading title (e.g. academic)
@@ -120,10 +120,10 @@ class FormattableName:
 
         Usage of 'abbrev' and 'lastnamefirst' is deprecated and for
         backwards compatibility only.
-        
+
         See the test suite for example usages.
         """
-        if lastnamefirst: 
+        if lastnamefirst:
             format = "L, %F, %P"
         if abbrev: format = format.replace("%F", "%f")
 
@@ -155,7 +155,7 @@ class FormattableName:
             while format.endswith(c):
                 format = format[:-1]
         return format
-    
+
 
     # behave like a dict
 

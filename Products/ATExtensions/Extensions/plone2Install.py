@@ -54,7 +54,7 @@ def configureFormController(self, out):
     out.write("Added validator and action for the 'more' button to the form controller.")
 
 
-        
+
 def install(self):
     out = StringIO()
     if INSTALL_DEMO_TYPES:
@@ -70,7 +70,7 @@ def install(self):
 
 def reconfigureFormController(self, out):
     pfc = getToolByName(self, 'portal_form_controller')
-    
+
     #BAAH no Python API for deleting actions or validators in FormController
     #lets get our hands dirty
     container = pfc.actions
@@ -78,7 +78,7 @@ def reconfigureFormController(self, out):
         container.delete(FormActionKey('base_edit', 'success', '',
                                        'more', pfc))
     except KeyError: pass
-    
+
     container = pfc.validators
     try:
         container.delete(FormValidatorKey('base_edit', '',
