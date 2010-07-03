@@ -19,6 +19,8 @@ them in some folderish type's 'allowed_content_types'.
 
 ATExtensions are installable in the Plone 3.3 and 4.0 series.
 
+Please use a release from the 1.0.x series with older versions of Plone.
+
 Enjoy,
 
   Raphael (r.ritz@biologie.hu-berlin.de)
