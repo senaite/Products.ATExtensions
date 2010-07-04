@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1 (unreleased)
-----------------
+1.1a2 (2010-07-04)
+------------------
 
 - Restored compatibility with Plone 3.3 by dealing with validation interfaces
   in a backwards compatible manner. [hannosch]
