@@ -1,9 +1,24 @@
 import re
+
 from zope.interface import implements
+
 from Products.validation.interfaces.IValidator import IValidator
+from Products.validation.interfaces import ivalidator
+
+try:
+    from Products.CMFPlone.factory import _IMREALLYPLONE4 as PLONE4
+    PLONE4 # pyflakes
+except ImportError:
+    PLONE4 = False
+
 
 class PartialUrlValidator:
-    implements(IValidator)
+
+    if PLONE4:
+        implements(IValidator)
+    else:
+        __implements__ = (ivalidator,)
+
     def __init__(self, name, title='', description=''):
         self.name = name
         self.title = title or name

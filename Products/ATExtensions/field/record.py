@@ -25,8 +25,16 @@ try:
 except ImportError:
     HAS_VALIDATION_CHAIN = 0
 
+
 from Products.ATExtensions.Extensions.utils import getDisplayList
 from Products.ATExtensions.widget import RecordWidget
+
+
+def providedBy(interface, obj):
+    if getattr(interface, 'providedBy', None):
+        return interface.providedBy(obj)
+    return interface.isImplementedBy(obj)
+
 
 class RecordField(ObjectField):
     """A field that stores a 'record' (dictionary-like) construct"""
@@ -268,9 +276,9 @@ class RecordField(ObjectField):
 
             if type(current_validators) is DictType:
                 raise NotImplementedError, 'Please use the new syntax with validation chains'
-            elif IValidationChain.providedBy(current_validators):
+            elif providedBy(IValidationChain, current_validators):
                 validators = current_validators
-            elif IValidator.providedBy(current_validators):
+            elif providedBy(IValidator, current_validators):
                 validators = ValidationChain(chainname, validators=current_validators)
             elif type(current_validators) in (TupleType, ListType, StringType):
                 if len(current_validators):
