@@ -1,3 +1,5 @@
+from Acquisition import aq_get
+from zope.i18n import translate
 from App.class_init import InitializeClass
 from AccessControl import ClassSecurityInfo
 from Products.CMFCore.utils import getToolByName
@@ -21,10 +23,14 @@ class CommentField(StringField):
 
     def get(self, instance, **kwargs):
         domain = self.widget.i18n_domain
-        if self.comment_msgid:
-            comment = instance.translate(domain=domain, msgid=self.comment_msgid, default=self.comment)
+        request = aq_get(instance, 'REQUEST', None)
+        if request is not None:
+            if self.comment_msgid:
+                comment = translate(domain=domain, msgid=self.comment_msgid, default=self.comment, context=request)
+            else:
+                comment = translate(domain=domain, msgid=self.comment, default=self.comment, context=request)    
         else:
-            comment = instance.translate(domain=domain, msgid=self.comment, default=self.comment)    
+            comment = self.comment
         transforms = getToolByName(instance, 'portal_transforms', None)
         if transforms is None:
             return comment
