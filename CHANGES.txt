@@ -1,9 +1,10 @@
 Changelog
 =========
 
-1.1 (unreleased)
-----------------
+1.1a3 (2010-09-28)
+------------------
 
+- Changed translate method to let it be compatible with ore.contentmirror bulk import [martior]
 
 1.1a2 (2010-07-04)
 ------------------
