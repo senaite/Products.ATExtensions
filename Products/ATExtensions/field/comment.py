@@ -17,6 +17,7 @@ class CommentField(StringField):
         'comment' : ' ',
         'comment_type' : 'text/structured',
         'comment_msgid' : '',
+        'comment_method' : None,
         'widget' : CommentWidget,
         })
     security = ClassSecurityInfo()
@@ -24,6 +25,8 @@ class CommentField(StringField):
     def get(self, instance, **kwargs):
         domain = self.widget.i18n_domain
         request = aq_get(instance, 'REQUEST', None)
+        if self.comment_method is not None:
+            self.comment = getattr(instance, self.comment_method)()
         if request is not None:
             if self.comment_msgid:
                 comment = translate(domain=domain, msgid=self.comment_msgid, default=self.comment, context=request)

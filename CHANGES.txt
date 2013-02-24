@@ -4,6 +4,17 @@ Changelog
 1.1 (unreleased)
 ----------------
 
+- Now that Archetypes is GPL we need to be GPL as well. [raphael]
+
+- Email widget macro: fixed a surviving 'isAnon'. [raphael]
+
+- Combo widget: correct handling of 'empty_marker' in
+  'process_form'. This fixes https://dev.plone.org/ticket/12105
+  Thanks to ristow for pointing this out. [raphael]
+
+- Comment field: support a 'comment_method' to obtain the text via a
+  callable at run time. The method is looked up on the content
+  object. [raphael]
 
 1.1a3 (2010-09-28)
 ------------------

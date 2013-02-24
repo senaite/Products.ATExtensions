@@ -25,12 +25,12 @@ class ComboWidget(SelectionWidget):
         replace it with the optionally entered one
         """
         value = form.get(field.getName(), empty_marker)
+        if value is empty_marker:
+            return empty_marker
         if not value or value.lower() in ('other', u'other'):
             # XXX is this generic enough?
             other_name = "%s_other" % field.getName()
             value = form.get(other_name, empty_marker)
-        if value is empty_marker:
-            return empty_marker
         if emptyReturnsMarker and value == '':
             return empty_marker
         return value, {}
