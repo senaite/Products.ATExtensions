@@ -17,8 +17,8 @@ To enable the types after install, go to portal types and
 make them implicitly addable or include
 them in some folderish type's 'allowed_content_types'.
 
-ATExtensions are installable in the Plone 3.3 and 4.0 series.
+ATExtensions are installable in the Plone 3.3.x and 4.x series.
 
 Please use a release from the 1.0.x series with older versions of Plone.
 
-Enjoy, Raphael (r.ritz at biologie.hu-berlin.de)
+Enjoy, Raphael (raphael.ritz at gmail.com)
