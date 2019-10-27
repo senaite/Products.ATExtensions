@@ -12,4 +12,5 @@ from formattablename import FormattableNameField
 from formattablenames import FormattableNamesField
 from comment import CommentField
 from remotetext import RemoteTextField
-from smartemail import SmartEmailField
+# XXX SENAITE on Plone5
+# from smartemail import SmartEmailField

@@ -11,5 +11,7 @@ from formattablename import FormattableNameWidget
 from formattablenames import FormattableNamesWidget
 from comment import CommentWidget
 from remotetext import RemoteTextWidget
-from smartemail import SmartEmailWidget
+# XXX SENAITE on Plone5
+# ImportError: No module named zLOG
+# from smartemail import SmartEmailWidget
 from labeledurl import LabeledUrlWidget

@@ -14,11 +14,14 @@ from config import *
 
 # the custom validator
 from Products.validation import validation
-from validator.isPartialUrl import PartialUrlValidator
-validation.register(PartialUrlValidator('isPartialUrl'))
+
+# XXX SENAITE on Plone5
+# Products.validation.exceptions.FalseValidatorError: <Products.ATExtensions.validator.isPartialUrl.PartialUrlValidator instance at 0x112e89690>
+# from validator.isPartialUrl import PartialUrlValidator
+# validation.register(PartialUrlValidator('isPartialUrl'))
 
 # the demo content types
-from examples import demo, formattablename
+# from examples import demo, formattablename
 
 # backwards compatibility
 import sys
